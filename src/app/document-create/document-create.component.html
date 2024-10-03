@@ -1,0 +1,55 @@
+<h1>Document Create Page</h1>
+<form (ngSubmit)="onSubmit()" #documentForm="ngForm">
+    <div class="form-group">
+      <label for="name">Nome do Documento</label>
+      <input
+        type="text"
+        id="name"
+        name="name"
+        class="form-control"
+        [(ngModel)]="document.name"
+        required
+      />
+    </div>
+  
+    <div class="form-group">
+      <label for="signerName">Nome do Signatário</label>
+      <input
+        type="text"
+        id="signerName"
+        name="signerName"
+        class="form-control"
+        [(ngModel)]="signer.name"
+        required
+      />
+    </div>
+  
+    <div class="form-group">
+      <label for="signerEmail">Email do Signatário</label>
+      <input
+        type="email"
+        id="signerEmail"
+        name="signerEmail"
+        class="form-control"
+        [(ngModel)]="signer.email"
+        required
+      />
+    </div>
+  
+    <div class="form-group">
+      <label for="pdfUrl">URL do PDF</label>
+      <input
+        type="url"
+        id="pdfUrl"
+        name="pdfUrl"
+        class="form-control"
+        [(ngModel)]="document.pdfUrl"
+        required
+      />
+    </div>
+  
+    <button type="submit" class="btn btn-primary" [disabled]="!documentForm.form.valid">
+      Criar Documento
+    </button>
+  </form>
+  
